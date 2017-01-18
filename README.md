@@ -27,4 +27,5 @@ __Test:__
 3.	The version of OpenCV should appears ‘2.4.13’
 
 For the course details: http://groups.csail.mit.edu/hcie/iap-multitouch-pad.html
+
 (C) 2017 MIT CSAIL-HCIE
