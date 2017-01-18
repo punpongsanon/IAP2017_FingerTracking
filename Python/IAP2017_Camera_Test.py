@@ -1,3 +1,5 @@
+# IAP-2017_MIT_CSAIL-HCIE: Parinya Punpongsanon
+
 import cv2
 import numpy as np
  
@@ -20,24 +22,27 @@ def get_image():
 # Ramp the camera - these frames will be discarded and are only used to allow v4l2
 # to adjust light levels, if necessary
 for i in xrange(ramp_frames):
- temp = get_image()
+	temp = get_image()
 print("Taking image...")
+
 # Take the actual image we want to keep
 camera_capture = get_image()
 file = "test_image.png"
+
 # A nice feature of the imwrite method is that it will automatically choose the
 # correct format based on the file extension you provide. Convenient!
 cv2.imwrite(file, camera_capture)
 
+# Capture and display in real-time
 while(True):
     # Capture frame-by-frame
     ret, frame = camera.read()
 
     # Our operations on the frame come here
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    #hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # Display the resulting frame
-    cv2.imshow('frame_HSV',frame)
+    cv2.imshow('frame',frame)
 	
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
