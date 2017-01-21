@@ -39,10 +39,10 @@ while(True):
     ret, frame = camera.read()
 
     # Our operations on the frame come here
-    #hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # Display the resulting frame
-    cv2.imshow('frame',frame)
+    cv2.imshow('frame',hsv)
 	
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

@@ -61,20 +61,20 @@ while(True):
     for contour in contours:
     	area = cv2.contourArea(contour)
     	if area > 1000:
-   			cv2.drawContours(frame, contour, -1, (0,255,0), 3)     		#draw contours in image
+   			cv2.drawContours(frame, contour, -1, (0,0,255), 3)     		#draw contours in image
    			(x,y),radius = cv2.minEnclosingCircle(contour)
 			center = (int(x),int(y))
 			radius = int(5)
 			cv2.circle(frame,center,radius,(0,255,0),2)
 			textstring = '(' + str(int(x)) + ', ' + str(int(y)) + ')'
-			cv2.putText(frame,textstring,(int(x+50),int(y)), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(255,255,255),1)
+			cv2.putText(frame,textstring,(int(x+50),int(y)), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0,0,255),1)
 
     cv2.imshow('trackbar window',frame)
 
     # Display the resulting frame
     cv2.imshow('hsv',hsv)
 	
-    if cv2.waitKey(200) & 0xFF == ord('q'):
+    if cv2.waitKey(30) & 0xFF == ord('q'):
         break
  
 # When everything done, release the capture
